@@ -1,5 +1,7 @@
 package Exercicio01;
-
+  
+import java.awt.LayoutManager;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -9,7 +11,6 @@ import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
 /**
  *
  * @author Gustavo
@@ -36,6 +37,7 @@ public class Exercicio01 implements BaseExercicio01 {
         adicionarComponentes();
         gerarDimensoes();
         gerarLocalizacao();
+        configurarJCombox();
         jFrame.setVisible(true);
 
     }
@@ -44,7 +46,7 @@ public class Exercicio01 implements BaseExercicio01 {
     public void gerarTela() {
 
         jFrame = new JFrame();
-        jFrame.setSize(617, 432);
+        jFrame.setSize(645, 446);
         jFrame.setLayout(null);
         jFrame.setLocationRelativeTo(null);
         jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -121,42 +123,42 @@ public class Exercicio01 implements BaseExercicio01 {
 
     @Override
     public void gerarLocalizacao() {
-        jTextFieldNome.setLocation(8, 30);
-        jTextFieldIdade.setLocation(399, 30);
-        jTextFielApelido.setLocation(190, 88 );
-        jTextFielPreco.setLocation(399, 88);
+        jTextFieldNome.setLocation(11, 30);
+        jTextFieldIdade.setLocation(419, 30);
+        jTextFielApelido.setLocation(195, 88 );
+        jTextFielPreco.setLocation(419, 88);
         
-        jLabelNome.setLocation(8, 5);
-        jLabelIdade.setLocation(398, 5);
-        jLabelRaca.setLocation(8, 60);
-        jLabelApelido.setLocation(190, 60);
-        jLabelPreco.setLocation(398, 60);
-        jLabelDescricao.setLocation(8, 183);
+        jLabelNome.setLocation(11, 5);
+        jLabelIdade.setLocation(419, 5);
+        jLabelRaca.setLocation(11, 60);
+        jLabelApelido.setLocation(195, 60);
+        jLabelPreco.setLocation(419, 60);
+        jLabelDescricao.setLocation(11, 183);
         
-        jRadioButtonVivo.setLocation(8 , 125);
-        jRadioButtonMorto.setLocation(8, 157);
+        jRadioButtonVivo.setLocation(11 , 125);
+        jRadioButtonMorto.setLocation(11, 157);
         jRadioButtonRacao.setLocation(110, 125);
         jRadioButtonCome.setLocation(110, 157);
         
-        jCheckBoxAdestrado.setLocation(328, 125 );
-        jCheckBoxCastrado.setLocation(425, 125 );
-        jCheckBoxVacinado.setLocation(328, 157 );
-        jCheckBoxTemPedigri.setLocation(425, 157 );
+        jCheckBoxAdestrado.setLocation(360, 125 );
+        jCheckBoxCastrado.setLocation(465, 125 );
+        jCheckBoxVacinado.setLocation(360, 157 );
+        jCheckBoxTemPedigri.setLocation(465, 157 );
         
-        jComboBoxRaca.setLocation(8, 88);
+        jComboBoxRaca.setLocation(11, 88);
         
-        jTextAreaDescricao.setLocation(8, 211);
+        jTextAreaDescricao.setLocation(11, 211);
         
-        jButtonSalvar.setLocation(453, 319 );
-        jButtonCancelar.setLocation(305, 319);
+        jButtonSalvar.setLocation(473, 319 );
+        jButtonCancelar.setLocation(315, 319);
     }
 
     @Override
     public void gerarDimensoes() {
-        jTextFieldNome.setSize(342, 23 );
-        jTextFieldIdade.setSize(195, 23);
-        jTextFielApelido.setSize(162, 23);
-        jTextFielPreco.setSize(195, 23);
+        jTextFieldNome.setSize(368, 24 );
+        jTextFieldIdade.setSize(204, 24);
+        jTextFielApelido.setSize(184, 24);
+        jTextFielPreco.setSize(204, 24);
         
         jLabelNome.setSize(60, 20);
         jLabelIdade.setSize(60, 20);
@@ -175,19 +177,38 @@ public class Exercicio01 implements BaseExercicio01 {
         jCheckBoxVacinado.setSize(100, 20 );
         jCheckBoxTemPedigri.setSize(150, 20 );
    
-        jComboBoxRaca.setSize(125, 20);
+        jComboBoxRaca.setSize(150, 20);
         
-        jTextAreaDescricao.setSize(584, 95);
+        jTextAreaDescricao.setSize(610, 95);
         
-        jButtonSalvar.setSize(140, 70);
-        jButtonCancelar.setSize(140, 70);
+        jButtonSalvar.setSize(150, 78);
+        jButtonCancelar.setSize(150, 78);
     }
-    
-    
     
     public void configurarJCombox(){
         
         
+        DefaultComboBoxModel racas = new DefaultComboBoxModel(
+                new Object[]{
+                    "Pastor-alemão", "Labrador retriever", "Buldogue", "Poodle",
+                    "Beagle", "Golden retriever", "Chihuahua", "Pug",
+                    "Rottweiler", "Husky siberiano", "Boxer", "Pit bull"
+                }
+        );
+        jComboBoxRaca.setModel(racas);
+        jComboBoxRaca.setSelectedIndex(-1);   
     }
+    
+    public void AcaoJButton(){
+        
+        
+        
+    }
+    
+    
+
+    
+    
+    
 
 }

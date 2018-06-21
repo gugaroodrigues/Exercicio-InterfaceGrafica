@@ -1,0 +1,154 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (sharedRuntime.cpp:834), pid=616, tid=0x0000000000000b48
+#  fatal error: exception happened outside interpreter, nmethods and vtable stubs at pc 0x00000000029e90ab
+#
+# JRE version:  (8.0_111-b14) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.111-b14 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000002941000):  JavaThread "Reference Handler" daemon [_thread_in_Java, id=2888, stack(0x00000000161b0000,0x00000000162b0000)]
+
+Stack: [0x00000000161b0000,0x00000000162b0000]
+[error occurred during error reporting (printing stack bounds), id 0xe0000000]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000015048800 JavaThread "Finalizer" daemon [_thread_in_Java, id=6460, stack(0x00000000162b0000,0x00000000163b0000)]
+=>0x0000000002941000 JavaThread "Reference Handler" daemon [_thread_in_Java, id=2888, stack(0x00000000161b0000,0x00000000162b0000)]
+  0x0000000002850800 JavaThread "main" [_thread_blocked, id=5204, stack(0x0000000002720000,0x0000000002820000)]
+
+Other Threads:
+  0x0000000015025800 VMThread [stack: 0x00000000160b0000,0x00000000161b0000] [id=5908]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 18944K, used 327K [0x00000000eab00000, 0x00000000ec000000, 0x0000000100000000)
+  eden space 16384K, 2% used [0x00000000eab00000,0x00000000eab51ec8,0x00000000ebb00000)
+  from space 2560K, 0% used [0x00000000ebd80000,0x00000000ebd80000,0x00000000ec000000)
+  to   space 2560K, 0% used [0x00000000ebb00000,0x00000000ebb00000,0x00000000ebd80000)
+ ParOldGen       total 44032K, used 0K [0x00000000c0000000, 0x00000000c2b00000, 0x00000000eab00000)
+  object space 44032K, 0% used [0x00000000c0000000,0x00000000c0000000,0x00000000c2b00000)
+ Metaspace       used 1632K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 179K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x0000000011d50000,0x0000000011f60000] byte_map_base: 0x0000000011750000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000077f7a6c0
+ Begin Bits: [0x00000000124c0000, 0x00000000134c0000)
+ End Bits:   [0x00000000134c0000, 0x00000000144c0000)
+
+Polling page: 0x0000000000930000
+
+CodeCache: size=245760Kb used=419Kb max_used=419Kb free=245340Kb
+ bounds [0x0000000002990000, 0x0000000002c00000, 0x0000000011990000]
+ total_blobs=134 nmethods=0 adapters=110
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (2 events):
+Event: 0.063 Thread 0x0000000002850800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000eab07c78) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u111\7883\hotspot\
+Event: 0.063 Thread 0x0000000002850800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000eab07f60) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u111\7883\hotspot\src\share\vm\prims
+
+Events (10 events):
+Event: 0.076 loading class java/util/Hashtable$EntrySet
+Event: 0.076 loading class java/util/Hashtable$EntrySet done
+Event: 0.077 loading class java/util/Collections$SynchronizedSet
+Event: 0.077 loading class java/util/Collections$SynchronizedCollection
+Event: 0.077 loading class java/util/Collections$SynchronizedCollection done
+Event: 0.077 loading class java/util/Collections$SynchronizedSet done
+Event: 0.077 loading class java/util/Objects
+Event: 0.077 loading class java/util/Objects done
+Event: 0.077 loading class java/util/Hashtable$Enumerator
+Event: 0.077 loading class java/util/Enumeration
+
+
+Dynamic libraries:
+0x00007ff7caf10000 - 0x00007ff7caf47000 	C:\Program Files\Java\jdk1.8.0_111\jre\bin\java.exe
+0x00007ffedd210000 - 0x00007ffedd3f1000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffed9f00000 - 0x00007ffed9fb2000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffed9720000 - 0x00007ffed9993000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffeda2a0000 - 0x00007ffeda341000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffedd140000 - 0x00007ffedd1de000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffedb050000 - 0x00007ffedb0ab000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffed9fc0000 - 0x00007ffeda0e4000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffeda110000 - 0x00007ffeda2a0000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffed8df0000 - 0x00007ffed8e10000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffed9eb0000 - 0x00007ffed9ed8000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffed9580000 - 0x00007ffed9712000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffed9ba0000 - 0x00007ffed9c3f000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffed9aa0000 - 0x00007ffed9b9a000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffed0660000 - 0x00007ffed08c9000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17134.112_none_fb3f961b30681c12\COMCTL32.dll
+0x00007ffeda9c0000 - 0x00007ffedace3000 	C:\WINDOWS\System32\combase.dll
+0x00007ffed9e30000 - 0x00007ffed9eaa000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffedb250000 - 0x00007ffedb27d000 	C:\WINDOWS\System32\IMM32.DLL
+0x0000000050060000 - 0x0000000050132000 	C:\Program Files\Java\jdk1.8.0_111\jre\bin\msvcr100.dll
+0x0000000077760000 - 0x0000000077ffa000 	C:\Program Files\Java\jdk1.8.0_111\jre\bin\server\jvm.dll
+0x00007ffeda660000 - 0x00007ffeda668000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffed68e0000 - 0x00007ffed6903000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffed4500000 - 0x00007ffed450a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffed3640000 - 0x00007ffed3649000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffedb280000 - 0x00007ffedb2ec000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffed68b0000 - 0x00007ffed68da000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ffed9a50000 - 0x00007ffed9a99000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x0000000050010000 - 0x000000005001f000 	C:\Program Files\Java\jdk1.8.0_111\jre\bin\verify.dll
+0x0000000077730000 - 0x0000000077759000 	C:\Program Files\Java\jdk1.8.0_111\jre\bin\java.dll
+0x0000000077710000 - 0x0000000077726000 	C:\Program Files\Java\jdk1.8.0_111\jre\bin\zip.dll
+0x00007ffedbc10000 - 0x00007ffedd050000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ffedb0b0000 - 0x00007ffedb159000 	C:\WINDOWS\System32\shcore.dll
+0x00007ffed8e70000 - 0x00007ffed957d000 	C:\WINDOWS\System32\windows.storage.dll
+0x00007ffeda600000 - 0x00007ffeda651000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007ffed8dd0000 - 0x00007ffed8de1000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x00007ffed8d40000 - 0x00007ffed8d5f000 	C:\WINDOWS\System32\profapi.dll
+0x00007ffed8d80000 - 0x00007ffed8dcc000 	C:\WINDOWS\System32\powrprof.dll
+0x00007ffed8d30000 - 0x00007ffed8d3a000 	C:\WINDOWS\System32\FLTLIB.DLL
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: Exercicio01.Exercicio01Principal
+java_class_path (initial): C:\Users\Gus\Documents\NetBeansProjects\Exercicio-InterfaceGrafica\ExercicioInterfaceGrafica01\build\classes
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Users\Gus\AppData\Roaming\Dashlane\4.6.6.23032\bin\Firefox_Extension\{442718d9-475e-452a-b3e1-fb1ee16b8e9f}\components;C:\Users\Gus\AppData\Roaming\Dashlane\5.12.0.19744\bin\Firefox_Extension\{442718d9-475e-452a-b3e1-fb1ee16b8e9f}\components;C:\Users\Gus\AppData\Roaming\Dashlane\5.12.0.19744\ucrt;C:\Users\Gus\AppData\Local\Microsoft\WindowsApps;
+USERNAME=Gus
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 23 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 17134 (10.0.17134.1)
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 6 model 23 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, tsc
+
+Memory: 4k page, physical 4193508k(1835088k free), swap 8387812k(4736008k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.111-b14) for windows-amd64 JRE (1.8.0_111-b14), built on Sep 22 2016 19:24:05 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed Jun 20 22:59:53 2018
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
