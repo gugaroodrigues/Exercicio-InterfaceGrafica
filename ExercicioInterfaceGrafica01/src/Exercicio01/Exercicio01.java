@@ -1,9 +1,10 @@
 package Exercicio01;
 
 import java.awt.Color;
-import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -32,7 +33,7 @@ public class Exercicio01 implements BaseExercicio01 {
     private JCheckBox jCheckBoxAdestrado, jCheckBoxCastrado, jCheckBoxVacinado,
             jCheckBoxTemPedigri;
     private JLabel jLabelNome, jLabelIdade, jLabelApelido, jLabelPreco,
-            jLabelRaca, jLabelDescricao;
+            jLabelRaca, jLabelDescricao, jLabelObrigatorio;
     private JTextArea jTextAreaDescricao;
 
     private JButton jButtonSalvar, jButtonCancelar, jButtonSobre;
@@ -46,8 +47,9 @@ public class Exercicio01 implements BaseExercicio01 {
         gerarDimensoes();
         gerarLocalizacao();
         configurarJCombox();
-        AcaoJButton();
-        estilizarRadioButton();
+        acaoJButtonSalvar();
+        acaoJButtonCancelar();
+        estilizarBordasComponentes();
         estilizarComponentes();
         configurarJScrollPane();
         jFrame.setVisible(true);
@@ -80,6 +82,7 @@ public class Exercicio01 implements BaseExercicio01 {
         jFrame.add(jLabelApelido);
         jFrame.add(jLabelPreco);
         jFrame.add(jLabelDescricao);
+        jFrame.add(jLabelObrigatorio);
 
         jFrame.add(jRadioButtonVivo);
         jFrame.add(jRadioButtonMorto);
@@ -99,6 +102,7 @@ public class Exercicio01 implements BaseExercicio01 {
         jFrame.add(jButtonCancelar);
         jFrame.add(jButtonSobre);
         jFrame.add(jScrollPaneDiscricao);
+        
     }
 
     @Override
@@ -114,7 +118,7 @@ public class Exercicio01 implements BaseExercicio01 {
         jLabelApelido = new JLabel("Apelido");
         jLabelPreco = new JLabel("Preço");
         jLabelDescricao = new JLabel("Descrição");
-
+        jLabelObrigatorio = new JLabel("Preenchimento obrigatorio");
         jRadioButtonVivo = new JRadioButton("Vivo");
         jRadioButtonMorto = new JRadioButton("Morto");
         jRadioButtonRacao = new JRadioButton("Ração");
@@ -150,6 +154,7 @@ public class Exercicio01 implements BaseExercicio01 {
         jLabelApelido.setLocation(195, 60);
         jLabelPreco.setLocation(419, 60);
         jLabelDescricao.setLocation(11, 183);
+        jLabelObrigatorio.setLocation(11, 300);
 
         jRadioButtonVivo.setLocation(11, 125);
         jRadioButtonMorto.setLocation(11, 157);
@@ -168,7 +173,7 @@ public class Exercicio01 implements BaseExercicio01 {
 
         jButtonSalvar.setLocation(473, 319);
         jButtonCancelar.setLocation(315, 319);
-        jButtonSobre.setLocation(9, 375);
+        jButtonSobre.setLocation(-1, 388);
     }
 
     @Override
@@ -184,6 +189,7 @@ public class Exercicio01 implements BaseExercicio01 {
         jLabelApelido.setSize(60, 20);
         jLabelPreco.setSize(60, 20);
         jLabelDescricao.setSize(60, 20);
+        jLabelObrigatorio.setSize(200, 20);
 
         jRadioButtonVivo.setSize(100, 20);
         jRadioButtonMorto.setSize(100, 20);
@@ -218,7 +224,7 @@ public class Exercicio01 implements BaseExercicio01 {
         jComboBoxRaca.setSelectedIndex(-1);
     }
 
-    public void AcaoJButton() {
+    public void acaoJButtonSalvar() {
         jButtonSalvar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -227,15 +233,66 @@ public class Exercicio01 implements BaseExercicio01 {
                         && !jCheckBoxVacinado.isSelected()
                         && !jCheckBoxTemPedigri.isSelected()) {
                     JOptionPane.showMessageDialog(null,
-                            "Alguma das opções não foram definidas");
+                            "Opções não definidas");
                     return;
                 }
-              
+                if (!jRadioButtonVivo.isSelected()
+                        && !jRadioButtonMorto.isSelected()
+                        && !jRadioButtonRacao.isSelected()
+                        && !jRadioButtonCome.isSelected()){
+                    JOptionPane.showMessageDialog(null,
+                            "Opções não definidas");
+                    return;
+                }
+               
+        if ((jTextFieldNome.getText().length()>0)
+                &&(jTextFieldIdade.getText().length()> 0)
+                && (jTextFieldPreco.getText().length() > 0)
+                && (jTextFieldApelido.getText().length() > 0)
+                &&(jTextAreaDescricao.getText().length() > 0)){
+                
+            jLabelObrigatorio.setVisible(false);
+            
+        } else {
+            jLabelObrigatorio.setVisible(true);
+            JOptionPane.showMessageDialog(null,"Verifique todos os campos");
+                   
+                }
+               
+            }
+        });
+        jButtonSalvar.addMouseListener(new MouseAdapter() {
+            public void mouseEntered(MouseEvent e){
+                jButtonSalvar.setBackground(Color.decode("#03021e"));
+            }
+            
+            @Override
+            public void mouseExited(MouseEvent e){
+                jButtonSalvar.setBackground(Color.decode("##B5CADD"));
+            }
+        });                
+    }
+
+ 
+    private void acaoJButtonCancelar() {
+        
+        jButtonCancelar.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e){
+                jButtonCancelar.setBackground(Color.decode("#03021e"));
+            }
+            
+            @Override
+            public void mouseExited(MouseEvent e){
+                jButtonCancelar.setBackground(Color.decode("#B5CADD"));
             }
         });
     }
     
-    private void estilizarRadioButton() {
+  
+    
+    
+    private void estilizarBordasComponentes() {
         jRadioButtonVivo.setContentAreaFilled(false);
         jRadioButtonMorto.setContentAreaFilled(false);
         jRadioButtonRacao.setContentAreaFilled(false);
@@ -245,7 +302,6 @@ public class Exercicio01 implements BaseExercicio01 {
         jCheckBoxCastrado.setContentAreaFilled(false);
         jCheckBoxTemPedigri.setContentAreaFilled(false);
         jCheckBoxVacinado.setContentAreaFilled(false);
-        
                
     }
     
@@ -260,6 +316,8 @@ public class Exercicio01 implements BaseExercicio01 {
         jTextFieldApelido.setForeground(Color.decode("#0f0f0f"));
         jTextFieldApelido.setBackground(Color.decode("#eff1f4"));
         
+        jLabelObrigatorio.setForeground(Color.decode("#f20602"));
+        
         jTextAreaDescricao.setForeground(Color.decode("#0f0f0f"));
         jTextAreaDescricao.setBackground(Color.decode("#eff1f4"));
         
@@ -267,7 +325,9 @@ public class Exercicio01 implements BaseExercicio01 {
         jComboBoxRaca.setBackground(Color.decode("#eff1f4"));
         
         jButtonSobre.setBackground(Color.decode("#c9cfdb"));
-     
+        
+        //"#031d72"
+         
     }
     
     private void configurarJScrollPane() {
@@ -278,6 +338,7 @@ public class Exercicio01 implements BaseExercicio01 {
           JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         jTextAreaDescricao.setLineWrap(true);
     }
+
     
     
 }
