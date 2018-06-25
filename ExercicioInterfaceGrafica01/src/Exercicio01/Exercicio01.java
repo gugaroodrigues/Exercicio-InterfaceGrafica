@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -27,18 +28,27 @@ public class Exercicio01 implements BaseExercicio01 {
     private JFrame jFrame;
     private JTextField jTextFieldNome, jTextFieldIdade,
             jTextFieldApelido, jTextFieldPreco;
+    
     private JComboBox jComboBoxRaca;
+    
     private JRadioButton jRadioButtonVivo, jRadioButtonRacao, jRadioButtonMorto,
             jRadioButtonCome;
+    
+    private ButtonGroup buttonGroupVivoMorto, buttonGroupCome;
+    
     private JCheckBox jCheckBoxAdestrado, jCheckBoxCastrado, jCheckBoxVacinado,
             jCheckBoxTemPedigri;
+    
     private JLabel jLabelNome, jLabelIdade, jLabelApelido, jLabelPreco,
             jLabelRaca, jLabelDescricao, jLabelObrigatorio;
+    
     private JTextArea jTextAreaDescricao;
 
     private JButton jButtonSalvar, jButtonCancelar, jButtonSobre;
     
     private JScrollPane jScrollPaneDiscricao;
+    
+    
 
     public Exercicio01() {
         gerarTela();
@@ -52,6 +62,7 @@ public class Exercicio01 implements BaseExercicio01 {
         estilizarBordasComponentes();
         estilizarComponentes();
         configurarJScrollPane();
+        definirButtonGroup();
         jFrame.setVisible(true);
 
     }
@@ -119,10 +130,14 @@ public class Exercicio01 implements BaseExercicio01 {
         jLabelPreco = new JLabel("Preço");
         jLabelDescricao = new JLabel("Descrição");
         jLabelObrigatorio = new JLabel("Preenchimento obrigatorio");
+        
         jRadioButtonVivo = new JRadioButton("Vivo");
         jRadioButtonMorto = new JRadioButton("Morto");
         jRadioButtonRacao = new JRadioButton("Ração");
         jRadioButtonCome = new JRadioButton("Come almoços, janta");
+        
+        buttonGroupVivoMorto = new ButtonGroup();
+        buttonGroupCome = new ButtonGroup();
 
         jCheckBoxAdestrado = new JCheckBox("Adestrado");
         jCheckBoxCastrado = new JCheckBox("Castrado");
@@ -260,38 +275,15 @@ public class Exercicio01 implements BaseExercicio01 {
                 }
                
             }
-        });
-        jButtonSalvar.addMouseListener(new MouseAdapter() {
-            public void mouseEntered(MouseEvent e){
-                jButtonSalvar.setBackground(Color.decode("#03021e"));
-            }
-            
-            @Override
-            public void mouseExited(MouseEvent e){
-                jButtonSalvar.setBackground(Color.decode("##B5CADD"));
-            }
-        });                
+        });              
     }
 
  
     private void acaoJButtonCancelar() {
         
-        jButtonCancelar.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e){
-                jButtonCancelar.setBackground(Color.decode("#03021e"));
-            }
-            
-            @Override
-            public void mouseExited(MouseEvent e){
-                jButtonCancelar.setBackground(Color.decode("#B5CADD"));
-            }
-        });
+        
     }
-    
-  
-    
-    
+      
     private void estilizarBordasComponentes() {
         jRadioButtonVivo.setContentAreaFilled(false);
         jRadioButtonMorto.setContentAreaFilled(false);
@@ -337,6 +329,13 @@ public class Exercicio01 implements BaseExercicio01 {
         jScrollPaneDiscricao.setVerticalScrollBarPolicy(
           JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         jTextAreaDescricao.setLineWrap(true);
+    }
+    
+    private void definirButtonGroup(){
+        buttonGroupVivoMorto.add(jRadioButtonVivo);
+        buttonGroupVivoMorto.add(jRadioButtonMorto);
+        buttonGroupCome.add(jRadioButtonRacao);
+        buttonGroupCome.add(jRadioButtonCome);
     }
 
     
