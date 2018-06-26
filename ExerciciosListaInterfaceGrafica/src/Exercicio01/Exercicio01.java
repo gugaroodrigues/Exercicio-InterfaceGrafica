@@ -7,8 +7,6 @@ package Exercicio01;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,7 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.plaf.metal.MetalLookAndFeel;
+
 
  
  // @author Gus
@@ -30,6 +28,7 @@ public class Exercicio01 implements BaseInterfaceExercicio{
 
     
        public Exercicio01() {
+           ConfigurandoLookAndFeel();
            gerarTela();
            instanciarComponentes();
            gerarLocalizacao();
@@ -38,6 +37,29 @@ public class Exercicio01 implements BaseInterfaceExercicio{
            acaoBotão();
            tela.setVisible(true);
                   }
+       
+     
+       
+    
+
+    public static void ConfigurandoLookAndFeel() {
+        try {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Windows".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (UnsupportedLookAndFeelException e) {
+
+        } catch (ClassNotFoundException e) {
+
+        } catch (InstantiationException e) {
+            
+        } catch (IllegalAccessException e) {
+            
+        }
+    }
     @Override
     public void gerarTela() {
         
@@ -101,9 +123,9 @@ public class Exercicio01 implements BaseInterfaceExercicio{
             @Override
             public void actionPerformed(ActionEvent e) {
                 
-                String nome = jTextFieldNome.getText().trim().toUpperCase().replace(".", "")
+                String nome = jTextFieldNome.getText().trim().replace(".", "")
                         .replace("-", "").replace(",", "");
-                String sobrenome = jTextFieldSobrenome.getText().trim().toUpperCase().replace(".", "")
+                String sobrenome = jTextFieldSobrenome.getText().trim().replace(".", "")
                         .replace("-", "").replace(",", "");
    
                 if(jTextFieldNome.getText().trim().isEmpty()){

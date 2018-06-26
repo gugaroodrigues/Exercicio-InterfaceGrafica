@@ -18,6 +18,8 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -51,6 +53,7 @@ public class Exercicio01 implements BaseExercicio01 {
     
 
     public Exercicio01() {
+        ConfigurandoLookAndFeel();
         gerarTela();
         instanciarComponentes();
         adicionarComponentes();
@@ -338,7 +341,24 @@ public class Exercicio01 implements BaseExercicio01 {
         buttonGroupCome.add(jRadioButtonCome);
     }
 
-    
+    public static void ConfigurandoLookAndFeel() {
+        try {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (UnsupportedLookAndFeelException e) {
+
+        } catch (ClassNotFoundException e) {
+
+        } catch (InstantiationException e) {
+            
+        } catch (IllegalAccessException e) {
+            
+        }
+    }
     
 }
 
