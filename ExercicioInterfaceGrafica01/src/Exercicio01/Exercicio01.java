@@ -7,6 +7,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -73,8 +74,10 @@ public class Exercicio01 implements BaseExercicio01 {
     @Override
     public void gerarTela() {
 
-        jFrame = new JFrame();
+        jFrame = new JFrame("PETFELIZ");
         jFrame.setSize(645, 446);
+        jFrame.setIconImage(new ImageIcon(Exercicio01.class
+                .getResource("pets.png")).getImage());
         jFrame.setLayout(null);
         jFrame.setLocationRelativeTo(null);
         jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);

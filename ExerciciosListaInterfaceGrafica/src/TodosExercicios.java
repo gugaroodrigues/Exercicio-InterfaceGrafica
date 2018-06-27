@@ -62,9 +62,13 @@ public class TodosExercicios implements BaseInterfaceExercicio {
     @Override
     public void gerarTela() {
         jFrame = new JFrame("Todos Exercicios");
+        //jFrame.setIconImage( new ImageIcon("Icons/entra21.jpg").getImage());
+        
+        jFrame.setIconImage(new ImageIcon(TodosExercicios.class
+                .getResource("Icons/aplicacao.png")).getImage());
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.setLayout(null);
-        jFrame.setSize(360, 400);
+        jFrame.setSize(360, 395);
         jFrame.setLocationRelativeTo(null);
         
 
@@ -101,7 +105,7 @@ public class TodosExercicios implements BaseInterfaceExercicio {
         jButton09 = new JButton("Exemplo 09");
         imagem = new JLabel();
         imagem.setIcon(new ImageIcon(getClass().getResource(
-                "/Icons/Dark")));
+                "Icons/Dark.jpg")));
 
     }
 
