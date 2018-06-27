@@ -12,8 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
+
 
 
  
@@ -27,9 +26,8 @@ public class Exercicio01 implements BaseInterfaceExercicio{
     private JButton jButtonConcalternar;
 
     
-       public Exercicio01() {
-           ConfigurandoLookAndFeel();
-           gerarTela();
+    public Exercicio01() {
+           gerarTela();         
            instanciarComponentes();
            gerarLocalizacao();
            gerarDimensoes();
@@ -38,37 +36,15 @@ public class Exercicio01 implements BaseInterfaceExercicio{
            tela.setVisible(true);
                   }
        
-     
-       
-    
-
-    public static void ConfigurandoLookAndFeel() {
-        try {
-            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (UnsupportedLookAndFeelException e) {
-
-        } catch (ClassNotFoundException e) {
-
-        } catch (InstantiationException e) {
-            
-        } catch (IllegalAccessException e) {
-            
-        }
-    }
     @Override
     public void gerarTela() {
         
         
         
-        tela = new JFrame("Exercio 01");
+        tela = new JFrame("Exercicio 01");
         tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         tela.setLayout(null);
-        tela.setSize(300, 300);
+        tela.setSize(300, 200);
         tela.setLocationRelativeTo(null);
         
     }
@@ -97,13 +73,13 @@ public class Exercicio01 implements BaseInterfaceExercicio{
 
     @Override
     public void gerarLocalizacao() {
-        jLabelNome.setLocation(5, 10);
-        jLabelSobrenome.setLocation(5, 60);
+        jLabelNome.setLocation(20, 10);
+        jLabelSobrenome.setLocation(20, 60);
         
-        jTextFieldNome.setLocation(5, 30);
-        jTextFieldSobrenome.setLocation(5, 80);
+        jTextFieldNome.setLocation(20, 30);
+        jTextFieldSobrenome.setLocation(20, 80);
         
-        jButtonConcalternar.setLocation(5, 120);
+        jButtonConcalternar.setLocation(20, 120);
         
     }
 
@@ -111,13 +87,13 @@ public class Exercicio01 implements BaseInterfaceExercicio{
         jLabelNome.setSize(60, 20);
         jLabelSobrenome.setSize(120, 20);
         
-        jTextFieldNome.setSize(180, 20);
-        jTextFieldSobrenome.setSize(180, 20);
+        jTextFieldNome.setSize(250, 25);
+        jTextFieldSobrenome.setSize(250, 25);
         
-        jButtonConcalternar.setSize(180, 20);
+        jButtonConcalternar.setSize(250, 25);
     }
 
-    private void acaoBotão(){
+    public void acaoBotão(){
         jButtonConcalternar.addActionListener(new ActionListener() {
 
             @Override
@@ -143,11 +119,13 @@ public class Exercicio01 implements BaseInterfaceExercicio{
                 }
                 String nomeCompleto = " ";
                 nomeCompleto = nome +" " + sobrenome;
-                JOptionPane.showMessageDialog(null, "Nome Completo " + nomeCompleto);
+                JOptionPane.showMessageDialog(null, "Nome Completo: " + nomeCompleto);
                 return;
                 
             }
         });
     }
+    
+  
     
 }

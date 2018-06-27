@@ -341,7 +341,7 @@ public class Exercicio01 implements BaseExercicio01 {
         buttonGroupCome.add(jRadioButtonCome);
     }
 
-    public static void ConfigurandoLookAndFeel() {
+    public void ConfigurandoLookAndFeel() {
         try {
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
