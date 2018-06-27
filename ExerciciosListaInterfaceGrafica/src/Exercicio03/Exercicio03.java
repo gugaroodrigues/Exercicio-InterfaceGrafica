@@ -103,6 +103,7 @@ public class Exercicio03 implements BaseInterfaceExercicio{
                     return;
                 }
                 
+                
                 long numero = 0;
                 try{
                     numero =  Long.parseLong(jTextFieldNumero.getText().trim());
