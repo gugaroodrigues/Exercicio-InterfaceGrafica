@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Exercicios04;
+package Exercicio04;
 
 import Exercicio01.BaseInterfaceExercicio;
 import java.awt.event.ActionEvent;
@@ -19,14 +19,14 @@ import javax.swing.JTextField;
  *
  * @author Gus
  */
-public class Exercicios04 implements BaseInterfaceExercicio {
+public class Exercicio04 implements BaseInterfaceExercicio {
 
     private JFrame janela;
     private JLabel jLabelNumero, imagem;
     private JTextField jTextFieldNumero;
     private JButton jButtonVerificar;
 
-    public Exercicios04() {
+    public Exercicio04() {
         gerarTela();
         instanciarComponentes();
         adicionarComponentes();
@@ -39,6 +39,8 @@ public class Exercicios04 implements BaseInterfaceExercicio {
     @Override
     public void gerarTela() {
         janela = new JFrame("Exercicio05");
+        janela.setIconImage( new ImageIcon(Exercicio04.class.getResource
+                ("/Icons/matematica.png")).getImage());
         janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         janela.setLayout(null);
         janela.setSize(300, 200);
@@ -102,8 +104,9 @@ public class Exercicios04 implements BaseInterfaceExercicio {
                 }
                 
                 if ( numero >= 9001){
-                    JOptionPane.showMessageDialog(null,null, null, JOptionPane.PLAIN_MESSAGE, new ImageIcon(
-                Exercicios04.class.getResource("/Icons/9000.gif"))
+                    JOptionPane.showMessageDialog(null,null, null, 
+                            JOptionPane.PLAIN_MESSAGE, new ImageIcon(
+                Exercicio04.class.getResource("/Icons/9000.gif"))
         );
                 }
                 

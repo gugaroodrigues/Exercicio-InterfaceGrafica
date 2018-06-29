@@ -173,6 +173,7 @@ public class TodosExercicios implements BaseInterfaceExercicio {
         jButton04.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                new Exercicio04.Exercicio04();
             }
         });
     }

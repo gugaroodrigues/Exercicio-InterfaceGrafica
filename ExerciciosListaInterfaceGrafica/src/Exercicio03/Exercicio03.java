@@ -39,6 +39,8 @@ public class Exercicio03 implements BaseInterfaceExercicio{
     @Override
     public void gerarTela() {
         tela = new JFrame("Exercicio 03");
+        tela.setIconImage( new ImageIcon(Exercicio03.class.getResource
+                ("/Icons/matematica.png")).getImage());
         tela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         tela.setLayout(null);
         tela.setSize(500, 300);

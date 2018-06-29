@@ -8,6 +8,7 @@ package Exercicio02;
 import Exercicio01.BaseInterfaceExercicio;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -41,6 +42,8 @@ public class Exercicio02 implements BaseInterfaceExercicio {
 @Override
         public void gerarTela() {
         jFrameTela = new JFrame("Exercicio 02");
+        jFrameTela.setIconImage( new ImageIcon(Exercicio02.class.getResource
+                ("/Icons/matematica.png")).getImage());
         jFrameTela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         jFrameTela.setLayout(null);
         jFrameTela.setSize(300, 250);
