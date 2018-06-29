@@ -109,6 +109,7 @@ public class Exercicio02 implements BaseInterfaceExercicio {
              try{     
                  resultado = Integer.parseInt(numero);
                  resultado = resultado * 50;
+                 
                  jLabelResultado.setVisible(true);
                  jLabelResultadoFinal.setVisible(true);
                  

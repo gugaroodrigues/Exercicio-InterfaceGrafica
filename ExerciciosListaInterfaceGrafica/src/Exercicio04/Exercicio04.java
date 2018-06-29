@@ -76,7 +76,7 @@ public class Exercicio04 implements BaseInterfaceExercicio {
     @Override
     public void gerarDimensoes() {
         jLabelNumero.setSize(100, 20);
-        //imagem.setSize(300, 200);
+        //imagem.setSize(280, 200);
         jTextFieldNumero.setSize(265, 30);
         jButtonVerificar.setSize(265, 40);
 
@@ -104,6 +104,10 @@ public class Exercicio04 implements BaseInterfaceExercicio {
                 }
                 
                 if ( numero >= 9001){
+                    /*imagem.setIcon(new ImageIcon(
+                Exercicio04.class.getResource("/Icons/9000.gif")));
+                    imagem.setVisible(true);*/
+                    
                     JOptionPane.showMessageDialog(null,null, null, 
                             JOptionPane.PLAIN_MESSAGE, new ImageIcon(
                 Exercicio04.class.getResource("/Icons/9000.gif"))
