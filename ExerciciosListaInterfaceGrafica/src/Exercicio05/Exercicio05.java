@@ -62,7 +62,8 @@ public class Exercicio05 implements BaseInterfaceExercicio {
     @Override
     public void gerarTela() {
         janela = new JFrame("Exercicio05");
-        janela.setIconImage(new ImageIcon(Exercicio04.class.getResource("/Icons/matematica.png")).getImage());
+        janela.setIconImage(new ImageIcon(Exercicio04.class
+                .getResource("/Icons/matematica.png")).getImage());
         janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         janela.setLayout(null);
         janela.setSize(500, 350);
@@ -118,9 +119,12 @@ public class Exercicio05 implements BaseInterfaceExercicio {
         jLabelNumero1.setSize(200, 20);
         jLabelNumero2.setSize(200, 20);
         jLabelResultado.setSize(200, 20);
+        
         jTextFieldNumero1.setSize(200, 35);
         jTextFieldNumero2.setSize(200, 35);
+        
         jScrollPaneResultado.setSize(250, 240);
+        
         jButtonSomar.setSize(90, 60);
         jButtonSubtrair.setSize(90, 60);
         jButtonMultiplicar.setSize(90, 60);

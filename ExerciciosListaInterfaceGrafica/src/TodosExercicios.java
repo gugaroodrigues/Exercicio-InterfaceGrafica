@@ -3,10 +3,6 @@
  *
  * @author Gus
  */
-
-
-
-
 import Exercicio01.BaseInterfaceExercicio;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,7 +12,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-
 
 public class TodosExercicios implements BaseInterfaceExercicio {
 
@@ -48,7 +43,7 @@ public class TodosExercicios implements BaseInterfaceExercicio {
         acaoJButton07();
         acaoJButton08();
         acaoJButton09();
-        
+
         jFrame.setVisible(true);
     }
 
@@ -56,20 +51,19 @@ public class TodosExercicios implements BaseInterfaceExercicio {
     public void gerarTela() {
         jFrame = new JFrame("Todos Exercicios");
         //jFrame.setIconImage( new ImageIcon("Icons/entra21.jpg").getImage());
-        
+
         jFrame.setIconImage(new ImageIcon(TodosExercicios.class
                 .getResource("Icons/aplicacao.png")).getImage());
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.setLayout(null);
         jFrame.setSize(360, 395);
         jFrame.setLocationRelativeTo(null);
-        
 
     }
 
     @Override
     public void adicionarComponentes() {
-        
+
         jFrame.add(jButton01);
         jFrame.add(jButton02);
         jFrame.add(jButton03);
@@ -81,12 +75,11 @@ public class TodosExercicios implements BaseInterfaceExercicio {
         jFrame.add(jButton09);
         jFrame.add(imagem);
 
-        
     }
 
     @Override
     public void instanciarComponentes() {
-        
+
         jButton01 = new JButton("Exemplo 01");
         jButton02 = new JButton("Exemplo 02");
         jButton03 = new JButton("Exemplo 03");
@@ -104,7 +97,7 @@ public class TodosExercicios implements BaseInterfaceExercicio {
 
     @Override
     public void gerarLocalizacao() {
-        
+
         jButton01.setLocation(10, 10);
         jButton02.setLocation(120, 10);
         jButton03.setLocation(230, 10);
@@ -119,7 +112,7 @@ public class TodosExercicios implements BaseInterfaceExercicio {
 
     @Override
     public void gerarDimensoes() {
-        
+
         jButton01.setSize(100, 100);
         jButton02.setSize(100, 100);
         jButton03.setSize(100, 100);
@@ -131,7 +124,6 @@ public class TodosExercicios implements BaseInterfaceExercicio {
         jButton09.setSize(100, 100);
         imagem.setSize(360, 400);
 
-        
     }
 
     public void acaoJButton01() {
@@ -139,7 +131,7 @@ public class TodosExercicios implements BaseInterfaceExercicio {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new Exercicio01.Exercicio01();
-                
+
             }
         });
     }
@@ -176,7 +168,7 @@ public class TodosExercicios implements BaseInterfaceExercicio {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new Exercicio05.Exercicio05();
-                
+
             }
         });
     }
@@ -185,6 +177,7 @@ public class TodosExercicios implements BaseInterfaceExercicio {
         jButton06.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                new Exercicio06.Exercicio06();
             }
         });
     }
@@ -212,10 +205,22 @@ public class TodosExercicios implements BaseInterfaceExercicio {
             }
         });
     }
-    
+
     public void ConfigurandoLookAndFeel() {
         try {
-            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+            javax.swing.UIManager.setLookAndFeel(
+                    "aero.AerolLookAndFeel");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    
+
+    /*public static void ConfigurandoLookAndFeel() {
+        try {
+            for (UIManager.LookAndFeelInfo info : UIManager
+                    .getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     UIManager.setLookAndFeel(info.getClassName());
                     break;
@@ -230,7 +235,5 @@ public class TodosExercicios implements BaseInterfaceExercicio {
         } catch (IllegalAccessException e) {
             
         }
-    }
-
+    } */
 }
-
