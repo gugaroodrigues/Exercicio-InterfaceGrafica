@@ -186,6 +186,7 @@ public class TodosExercicios implements BaseInterfaceExercicio {
         jButton07.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                new Exercicio07.Exercicio07();
             }
         });
     }
@@ -209,7 +210,7 @@ public class TodosExercicios implements BaseInterfaceExercicio {
     public void ConfigurandoLookAndFeel() {
         try {
             javax.swing.UIManager.setLookAndFeel(
-                    "aero.AerolLookAndFeel");
+                    "com.jtattoo.plaf.noire.NoireLookAndFeel");
         } catch (Exception ex) {
             ex.printStackTrace();
         }

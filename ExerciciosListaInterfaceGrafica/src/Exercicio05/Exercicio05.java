@@ -173,9 +173,7 @@ public class Exercicio05 implements BaseInterfaceExercicio {
                 String resultadoEmTexto = Double.toString(resultado);
                 jTextAreaResultado.setText(resultadoEmTexto);
                 jScrollPaneResultado.setToolTipText(resultadoEmTexto);
-             
-                   
-    
+
             }
         });
         jButtonSubtrair.addActionListener(new ActionListener() {
@@ -187,9 +185,7 @@ public class Exercicio05 implements BaseInterfaceExercicio {
                 String resultadoEmTexto = Double.toString(resultado);
                 jTextAreaResultado.setText(resultadoEmTexto);
                 jScrollPaneResultado.setToolTipText(resultadoEmTexto);
-             
-                   
-    
+
             }
         });
         jButtonMultiplicar.addActionListener(new ActionListener() {
@@ -201,9 +197,7 @@ public class Exercicio05 implements BaseInterfaceExercicio {
                 String resultadoEmTexto = Double.toString(resultado);
                 jTextAreaResultado.setText(resultadoEmTexto);
                 jScrollPaneResultado.setToolTipText(resultadoEmTexto);
-             
-                   
-    
+
             }
         });
         jButtonDividir.addActionListener(new ActionListener() {
@@ -215,9 +209,7 @@ public class Exercicio05 implements BaseInterfaceExercicio {
                 String resultadoEmTexto = Double.toString(resultado);
                 jTextAreaResultado.setText(resultadoEmTexto);
                 jScrollPaneResultado.setToolTipText(resultadoEmTexto);
-             
-                   
-    
+
             }
         });
         
